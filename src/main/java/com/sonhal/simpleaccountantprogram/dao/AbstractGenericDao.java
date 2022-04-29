@@ -24,7 +24,6 @@ public abstract class AbstractGenericDao<E> implements GenericDao<E> {
 
 
     protected AbstractGenericDao() {
-        System.out.println("AAAA");
         this.entityClass = (Class<E>) ((ParameterizedType) this.getClass().getGenericSuperclass())
                 .getActualTypeArguments()[0];
     }

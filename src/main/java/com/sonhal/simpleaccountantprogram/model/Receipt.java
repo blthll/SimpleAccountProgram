@@ -1,86 +1,48 @@
 package com.sonhal.simpleaccountantprogram.model;
 
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
+
 import javax.persistence.*;
 import java.io.Serializable;
 import java.sql.Date;
 
 @Entity
-@Table(name = "Receipt")
+@Table(name = "receipt")
+@ToString
 public class Receipt implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column
+    @Getter
+    @Setter
     private Integer receiptId;
+
     @Column
+    @Getter
+    @Setter
     private Type receiptType;
+
     @ManyToOne
+    @Getter
+    @Setter
     private Account account;
+
     @Column
+    @Getter
+    @Setter
     private Integer price;
+
     @Column
+    @Getter
+    @Setter
     private Date dateOfInvoice;
+
     @Column
+    @Getter
+    @Setter
     private Date dateOfCreate;
-
-    public Integer getReceiptId() {
-        return receiptId;
-    }
-
-    public void setReceiptId(Integer receiptId) {
-        this.receiptId = receiptId;
-    }
-
-    public Type getReceiptType() {
-        return receiptType;
-    }
-
-    public void setReceiptType(Type receiptType) {
-        this.receiptType = receiptType;
-    }
-
-    public Account getAccount() {
-        return account;
-    }
-
-    public void setAccount(Account account) {
-        this.account = account;
-    }
-
-    public Integer getPrice() {
-        return price;
-    }
-
-    public void setPrice(Integer price) {
-        this.price = price;
-    }
-
-    public Date getDateOfInvoice() {
-        return dateOfInvoice;
-    }
-
-    public void setDateOfInvoice(Date dateOfInvoice) {
-        this.dateOfInvoice = dateOfInvoice;
-    }
-
-    public Date getDateOfCreate() {
-        return dateOfCreate;
-    }
-
-    public void setDateOfCreate(Date dateOfCreate) {
-        this.dateOfCreate = dateOfCreate;
-    }
-
-    @Override
-    public String toString() {
-        return "Receipt{" +
-                "receiptId=" + receiptId +
-                ", receiptType=" + receiptType +
-                ", account=" + account +
-                ", price=" + price +
-                ", dateOfInvoice=" + dateOfInvoice +
-                ", dateOfCreate=" + dateOfCreate +
-                '}';
-    }
 
     public enum Type {
         INCOME,
