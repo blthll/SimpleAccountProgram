@@ -21,7 +21,6 @@ public class Invoice implements Serializable {
 
 
     @ManyToOne
-    @JoinTable(name = "account")
     private Account account;
     @Column
     private Integer price;

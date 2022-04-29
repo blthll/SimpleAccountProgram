@@ -19,7 +19,6 @@ public class Receipt implements Serializable {
     @Column
     private Type receiptType;
     @ManyToOne
-    @JoinTable(name = "account")
     private Account account;
     @Column
     private Integer price;

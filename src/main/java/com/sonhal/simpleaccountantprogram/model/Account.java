@@ -10,7 +10,7 @@ public class Account implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column
-    private Integer accountId;
+    private Integer id;
     @Column
     private String name;
     @Column
@@ -22,12 +22,12 @@ public class Account implements Serializable {
     @Column
     private String currency;
 
-    public Integer getAccountId() {
-        return accountId;
+    public Integer getId() {
+        return id;
     }
 
-    public void setAccountId(Integer accountId) {
-        this.accountId = accountId;
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public String getName() {
@@ -72,7 +72,7 @@ public class Account implements Serializable {
 
     @Override
     public String toString() {
-        return "Account{" + "accountId=" + accountId + ", name='" + name + '\'' + ", balance=" + balance + ", address='" + address + '\'' + ", dateOfCreate=" + dateOfCreate + ", currency='" + currency + '\'' + '}';
+        return "Account{" + "accountId=" + id + ", name='" + name + '\'' + ", balance=" + balance + ", address='" + address + '\'' + ", dateOfCreate=" + dateOfCreate + ", currency='" + currency + '\'' + '}';
     }
 }
 
