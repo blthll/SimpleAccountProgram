@@ -1,17 +1,13 @@
 package com.sonhal.simpleaccountantprogram.model;
 
+import java.io.Serializable;
 import java.sql.Date;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "Invoice")
-public class Invoice {
+public class Invoice implements Serializable {
     public enum Type{
         INCOME,
         OUTCOME
@@ -22,7 +18,10 @@ public class Invoice {
     private Integer invoiceId;
     @Column
     private Type invoiceType;
-    @Column
+
+
+    @ManyToOne
+    @JoinTable(name = "account")
     private Account account;
     @Column
     private Integer price;

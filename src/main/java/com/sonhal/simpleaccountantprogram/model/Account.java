@@ -1,17 +1,12 @@
 package com.sonhal.simpleaccountantprogram.model;
 
+import javax.persistence.*;
+import java.io.Serializable;
 import java.sql.Date;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
-
 @Entity
-@Table(name = "Account")
-public class Account {
+@Table(name = "account")
+public class Account implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column
@@ -77,14 +72,7 @@ public class Account {
 
     @Override
     public String toString() {
-        return "Account{" +
-                "accountId=" + accountId +
-                ", name='" + name + '\'' +
-                ", balance=" + balance +
-                ", address='" + address + '\'' +
-                ", dateOfCreate=" + dateOfCreate +
-                ", currency='" + currency + '\'' +
-                '}';
+        return "Account{" + "accountId=" + accountId + ", name='" + name + '\'' + ", balance=" + balance + ", address='" + address + '\'' + ", dateOfCreate=" + dateOfCreate + ", currency='" + currency + '\'' + '}';
     }
 }
 
