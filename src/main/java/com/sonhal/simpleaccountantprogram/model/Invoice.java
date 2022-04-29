@@ -1,25 +1,18 @@
 package com.sonhal.simpleaccountantprogram.model;
 
+import javax.persistence.*;
 import java.io.Serializable;
 import java.sql.Date;
-
-import javax.persistence.*;
 
 @Entity
 @Table(name = "Invoice")
 public class Invoice implements Serializable {
-    public enum Type{
-        INCOME,
-        OUTCOME
-    }
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column
     private Integer invoiceId;
     @Column
     private Type invoiceType;
-
-
     @ManyToOne
     private Account account;
     @Column
@@ -87,6 +80,11 @@ public class Invoice implements Serializable {
                 ", dateOfInvoice=" + dateOfInvoice +
                 ", dateOfCreate=" + dateOfCreate +
                 '}';
+    }
+
+    public enum Type {
+        INCOME,
+        OUTCOME
     }
 }
 
