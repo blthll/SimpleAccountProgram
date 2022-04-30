@@ -2,6 +2,7 @@ package com.sonhal.simpleaccountantprogram.dao;
 
 import org.hibernate.Session;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
 
 import javax.persistence.EntityManager;
 import javax.persistence.criteria.CriteriaQuery;
@@ -16,6 +17,7 @@ import java.util.List;
  * @author s84240320
  * @since 2022-04-29
  */
+
 public abstract class AbstractBaseDao<E> implements BaseDao<E> {
     private final Class<E> entityClass;
 
