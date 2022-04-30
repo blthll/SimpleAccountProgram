@@ -9,7 +9,7 @@ import java.util.List;
  * @author s84240320
  * @since 2022-04-29
  */
-public interface GenericDao<E> {
+public interface BaseDao<E> {
     List<E> findAll();
 
     E findById(Serializable id);

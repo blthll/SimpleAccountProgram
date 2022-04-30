@@ -1,9 +1,9 @@
 package com.sonhal.simpleaccountantprogram.dao;
 
 import org.hibernate.Session;
-import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import javax.persistence.EntityManager;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
 import java.io.Serializable;
@@ -16,20 +16,20 @@ import java.util.List;
  * @author s84240320
  * @since 2022-04-29
  */
-public abstract class AbstractGenericDao<E> implements GenericDao<E> {
+public abstract class AbstractBaseDao<E> implements BaseDao<E> {
     private final Class<E> entityClass;
 
     @Autowired
-    private SessionFactory sessionFactory;
+    private EntityManager entityManager;
 
 
-    protected AbstractGenericDao() {
+    protected AbstractBaseDao() {
         this.entityClass = (Class<E>) ((ParameterizedType) this.getClass().getGenericSuperclass())
                 .getActualTypeArguments()[0];
     }
 
     protected Session getSession() {
-        return this.sessionFactory.getCurrentSession();
+        return entityManager.unwrap(Session.class);
     }
 
     @Override

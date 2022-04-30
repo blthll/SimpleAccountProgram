@@ -1,6 +1,6 @@
 package com.sonhal.simpleaccountantprogram.dao.impl;
 
-import com.sonhal.simpleaccountantprogram.dao.AbstractGenericDao;
+import com.sonhal.simpleaccountantprogram.dao.AbstractBaseDao;
 import com.sonhal.simpleaccountantprogram.model.Invoice;
 import org.springframework.stereotype.Repository;
 
@@ -11,5 +11,5 @@ import org.springframework.stereotype.Repository;
  * @since 2022-04-29
  */
 @Repository
-public class InvoiceDaoImpl extends AbstractGenericDao<Invoice> {
+public class InvoiceDaoImpl extends AbstractBaseDao<Invoice> {
 }

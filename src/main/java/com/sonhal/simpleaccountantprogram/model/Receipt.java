@@ -1,8 +1,6 @@
 package com.sonhal.simpleaccountantprogram.model;
 
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -11,6 +9,8 @@ import java.sql.Date;
 @Entity
 @Table(name = "receipt")
 @ToString
+@AllArgsConstructor
+@NoArgsConstructor
 public class Receipt implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
