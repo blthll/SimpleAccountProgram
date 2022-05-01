@@ -11,37 +11,27 @@ import java.sql.Date;
 @ToString
 @AllArgsConstructor
 @NoArgsConstructor
+@Getter
+@Setter
 public class Receipt implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column
-    @Getter
-    @Setter
     private Integer receiptId;
 
     @Column
-    @Getter
-    @Setter
     private Type receiptType;
 
     @ManyToOne
-    @Getter
-    @Setter
     private Account account;
 
     @Column
-    @Getter
-    @Setter
     private Integer price;
 
     @Column
-    @Getter
-    @Setter
     private Date dateOfInvoice;
 
     @Column
-    @Getter
-    @Setter
     private Date dateOfCreate;
 
     public enum Type {

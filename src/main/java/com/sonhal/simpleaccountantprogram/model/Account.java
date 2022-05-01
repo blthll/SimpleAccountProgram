@@ -1,9 +1,6 @@
 package com.sonhal.simpleaccountantprogram.model;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -13,37 +10,28 @@ import java.sql.Date;
 @Table(name = "account")
 @AllArgsConstructor
 @NoArgsConstructor
+@ToString
+@Getter
+@Setter
 public class Account implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column
-    @Getter
-    @Setter
     private Integer id;
 
     @Column
-    @Getter
-    @Setter
     private String name;
 
     @Column
-    @Getter
-    @Setter
     private Float balance;
 
     @Column
-    @Getter
-    @Setter
     private String address;
 
     @Column
-    @Getter
-    @Setter
     private Date dateOfCreate;
 
     @Column
-    @Getter
-    @Setter
     private String currency;
 }
 

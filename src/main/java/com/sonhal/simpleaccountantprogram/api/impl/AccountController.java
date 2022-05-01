@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @author s84240320
  * @since 2022-04-30
  */
-@RequestMapping("/accounts")
+@RequestMapping("/accounts" )
 @RestController
 public class AccountController extends AbstractBaseController<Account> {
     @Autowired
