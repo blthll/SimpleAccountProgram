@@ -1,35 +1,29 @@
 package com.sonhal.simpleaccountantprogram.model;
 
-import lombok.*;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 import javax.persistence.*;
-import java.io.Serializable;
-import java.sql.Date;
+import java.util.Date;
 
 @Entity
 @Table(name = "invoice")
-@ToString
-@AllArgsConstructor
-@NoArgsConstructor
-@Getter
-@Setter
-public class Invoice implements Serializable {
+@Data
+@EqualsAndHashCode(callSuper = true)
+public class Invoice extends BaseEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column
-    private Integer invoiceId;
+    private Integer id;
 
     @Column
-    private Type invoiceType;
+    private Type type;
 
     @Column
-    private Integer price;
+    private float price;
 
     @Column
     private Date dateOfInvoice;
-
-    @Column
-    private Date dateOfCreate;
 
     @ManyToOne
     private Account account;
@@ -38,6 +32,7 @@ public class Invoice implements Serializable {
         INCOME,
         OUTCOME
     }
+
 }
 
 

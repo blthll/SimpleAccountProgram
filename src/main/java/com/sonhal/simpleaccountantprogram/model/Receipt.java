@@ -1,19 +1,16 @@
 package com.sonhal.simpleaccountantprogram.model;
 
-import lombok.*;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 import javax.persistence.*;
-import java.io.Serializable;
 import java.sql.Date;
 
 @Entity
 @Table(name = "receipt")
-@ToString
-@AllArgsConstructor
-@NoArgsConstructor
-@Getter
-@Setter
-public class Receipt implements Serializable {
+@Data
+@EqualsAndHashCode(callSuper = true)
+public class Receipt extends BaseEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column
@@ -26,13 +23,10 @@ public class Receipt implements Serializable {
     private Account account;
 
     @Column
-    private Integer price;
+    private float price;
 
     @Column
     private Date dateOfInvoice;
-
-    @Column
-    private Date dateOfCreate;
 
     public enum Type {
         INCOME,

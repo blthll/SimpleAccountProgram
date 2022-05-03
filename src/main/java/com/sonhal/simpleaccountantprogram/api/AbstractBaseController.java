@@ -1,7 +1,6 @@
 package com.sonhal.simpleaccountantprogram.api;
 
 import com.sonhal.simpleaccountantprogram.service.BaseService;
-import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
 import java.io.Serializable;
@@ -21,7 +20,7 @@ public class AbstractBaseController<E> implements BaseController<E> {
         this.service = service;
     }
 
-    @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
+    @GetMapping
     @Override
     public List<E> findAll() {
         return this.service.findAll();

@@ -1,19 +1,15 @@
 package com.sonhal.simpleaccountantprogram.model;
 
-import lombok.*;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 import javax.persistence.*;
-import java.io.Serializable;
-import java.sql.Date;
 
+@Data
 @Entity
 @Table(name = "account")
-@AllArgsConstructor
-@NoArgsConstructor
-@ToString
-@Getter
-@Setter
-public class Account implements Serializable {
+@EqualsAndHashCode(callSuper = true)
+public class Account extends BaseEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column
@@ -29,10 +25,8 @@ public class Account implements Serializable {
     private String address;
 
     @Column
-    private Date dateOfCreate;
-
-    @Column
     private String currency;
+
 }
 
 
