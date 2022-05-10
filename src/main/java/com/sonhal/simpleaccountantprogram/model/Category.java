@@ -8,18 +8,18 @@ import java.io.Serializable;
 import java.sql.Date;
 
 @Entity
-@Table(name = "Receipt")
-public class Receipt implements Serializable {
+@Table(name = "Category")
+public class Category implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column
     @Getter
     @Setter
-    private Integer receiptId;
+    private Integer categoryId;
     @Column
     @Getter
     @Setter
-    private Type receiptType;
+    private String categoryName;
     @ManyToOne
     @Getter
     @Setter
@@ -27,28 +27,14 @@ public class Receipt implements Serializable {
     @Column
     @Getter
     @Setter
-    private Integer price;
-    @Column
-    @Getter
-    @Setter
-    private Date dateOfInvoice;
-    @Column
-    @Getter
-    @Setter
     private Date dateOfCreate;
 
-    public enum Type {
-        INCOME,
-        OUTCOME
-    }
     @Override
     public String toString() {
-        return "Receipt{" +
-                "receiptId=" + receiptId +
-                ", receiptType=" + receiptType +
+        return "Category{" +
+                "categoryId=" + categoryId +
+                ", categoryName='" + categoryName + '\'' +
                 ", account=" + account +
-                ", price=" + price +
-                ", dateOfInvoice=" + dateOfInvoice +
                 ", dateOfCreate=" + dateOfCreate +
                 '}';
     }

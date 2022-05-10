@@ -45,6 +45,18 @@ public class Account implements Serializable {
     @Getter
     @Setter
     private String currency;
+
+    @Override
+    public String toString() {
+        return "Account{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", balance=" + balance +
+                ", address='" + address + '\'' +
+                ", dateOfCreate=" + dateOfCreate +
+                ", currency='" + currency + '\'' +
+                '}';
+    }
 }
 
 
